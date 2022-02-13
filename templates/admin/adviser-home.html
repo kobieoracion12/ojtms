@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OJT Monitoring System</title>
+
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/animate.min.css">
+
+  <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="../static/linearicons/icons.css" />
+  <link rel="stylesheet" type="text/css" href="../static/css/plugins/simple-line-icons.css" />
+  <link href="../static/css/style.css" rel="stylesheet">
+  <!-- end: Css -->
+</head>
+
+<body id="mimin" class="dashboard">
+  <!-- start: Header -->
+  <nav class="navbar navbar-default header navbar-fixed-top" style="background-color: rgba(62,88,113);">
+    <div class="col-md-12 nav-wrapper">
+      <div class="navbar-header" style="width:100%;">
+        <div class="opener-left-menu is-open" style="background-color: rgba(44,62,80);">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </div>
+        <a href="/adviser-home" class="navbar-brand">
+          <b>OJTMS</b>
+        </a>
+        <ul class="nav navbar-nav navbar-right user-nav">
+          <li class="user-name"><span>{{ session['user_type']~" "~session['user_name']}}</span></li>
+          <li class="dropdown avatar-dropdown">
+            <img src="../static/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true" />
+            <ul class="dropdown-menu user-dropdown animated swing">
+              <li><a href="{{url_for('logout')}}"><span class="lnr lnr-power-switch"></span> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end: Header -->
+
+  <div class="container-fluid mimin-wrapper">
+    <!-- start:Left Menu -->
+    <div id="left-menu">
+      <div class="sub-left-menu scroll" style="background-color: rgba(44,62,80);">
+        <ul class="nav nav-list">
+          <li class="time">
+            <h1 class="animated fadeInLeft">21:00</h1>
+            <p class="animated fadeInRight">Sat,June 1st 2021</p>
+          </li>
+          <li class="active">
+            <a href="{{url_for('home')}}">
+              <span class="lnr lnr-home"></span>Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('card')}}">
+              <span class="lnr lnr-user"></span>Reports
+            </a>
+          </li>
+          <li>
+            <a href="{{url_for('data')}}">
+              <span class="lnr lnr-thumbs-up"></span>Students
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end: Left Menu -->
+
+  <div id="profilemodal" class="modal animated rubberBand delete-modal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+                <div class="modal-body text-center">
+          <div class="row">
+
+            <div class="col-sm-12">
+
+              <div class="header">
+                <span class="lnr lnr-thumbs-up" style="font-size: 30px"> Student Details</span>
+              </div><br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" placeholder="title..." name="first_name" id="first_name" value="{{ request.form['first_name'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" placeholder="title..." name="last_name" id="last_name" value="{{ request.form['last_name'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="abstract..." name="email_add" id="email_add" value="{{ request.form['email_add'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="number" class="form-control" placeholder="abstract..." name="contact_no" id="contact_no" value="{{ request.form['contact_no'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="abstract..." name="user_name" id="user_name" value="{{ session['user_name'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="abstract..." name="user_pass" id="user_pass" value="{{ request.form['user_pass'] }}" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Total number of Hours</label>
+                    <input type="number" class="form-control" placeholder="abstract..." name="hours" id="hours" value="{{ request.form['hours'] }}" required>
+                  </div>
+                </div>
+
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-md bg-info" value="Submit">
+                    <input type="button" class="btn btn-md bg-danger" data-dismiss="modal" value="Cancel">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- start: content -->
+    <div id="content">
+
+      <div class="col-md-12" style="padding:20px;">
+        <div class="col-md-12 padding-0">
+          <div class="col-md-12 padding-0">
+            <div class="col-md-12 padding-0">
+              <div class="panel box-shadow-none content-header">
+                <div class="panel-body">
+                  <div class="col-md-12">
+                    <h3 class="animated fadeInLeft"><span class="lnr lnr-home"></span> Dashboard</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 padding-0">
+              <div class="col-md-6">
+                <div class="panel box-v1 animated bounceInLeft">
+                  <div class="panel-heading bg-white border-none">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                      <h4 class="text-left">Pending</h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                      <h4>
+                        <span class="lnr lnr-user text-right"></span>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="panel-body text-center">
+                    {% for post in changes %}
+                    <h1>{{ post }}</h1>
+                    {% endfor %}
+                    <p>Number of Pending Status</p>
+                    <hr />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="panel box-v1 animated rubberBand">
+                  <div class="panel-heading bg-white border-none">
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                      <h4 class="text-left">Students</h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                      <h4>
+                        <span class="lnr lnr-users text-right"></span>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="panel-body text-center">
+                    {% for post in change %}
+                    <h1>{{ post }}</h1>
+                    {% endfor %}
+                    <p>Number of Students</p>
+                    <hr />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="panel box-v1 animated bounceInRight">
+                  <div class="panel-body text-center">
+                    <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end: content -->
+  </div>
+  <!-- end: right menu -->
+
+  </div>
+
+  <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+    <span class="fa fa-bars"></span>
+  </button>
+  <!-- end: Mobile -->
+
+  <!-- start: Javascript -->
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/jquery.ui.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+
+  <!-- plugins -->
+  <script src="../static/js/plugins/moment.min.js"></script>
+  <script src="../static/js/plugins/jquery.nicescroll.js"></script>
+
+  <!-- custom -->
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/canvasjs.min.js"></script>
+  
+  <script>
+    window.onload = function () {
+
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        data: [{
+          type: "pie",
+          startAngle: 310,
+          indexLabel: "{label} {y}",
+          dataPoints: [
+          {% for post in change %}
+            { y: {{ post }}, label: "Accounts" },
+          {% endfor %}
+          {% for post in changes %}
+            { y: {{ post }}, label: "Students" },
+          {% endfor %}
+          ]
+        }]
+      });
+      chart.render();
+
+    }
+  </script>
+  
+</body>
+
+</html>

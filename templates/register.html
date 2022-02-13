@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+</head>
+<body style="background-color:rebeccapurple">
+<form method="post">
+  <div class="row m-5 p-5">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center">Register</h2>
+          
+          <div class="m-5 p-5">
+
+            <br>
+
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" value="{{ request.form['first_name'] }}">
+              </div>
+    
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" value="{{ request.form['last_name'] }}">
+              </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="email_add">Email</label>
+                <input type="email" class="form-control" name="email_add" id="email_add" value="{{ request.form['email_add'] }}">
+              </div>
+    
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="contact_no">Contact Number</label>
+                <input type="number" class="form-control" name="contact_no" id="contact_no" value="{{ request.form['contact_no'] }}">
+              </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <label class="form-label" for="profile_pic">Profile Picture</label>
+                <input type="file" class="form-control" name="profile_pic" id="profile_pic">
+              </div>
+            </div>
+
+            <br><hr><br>
+
+            <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="user_name">Username</label>
+                <input type="text" class="form-control" name="user_name" id="user_name" value="{{ request.form['user_name'] }}">
+              </div>
+    
+              <div class="col-lg-6 col-sm-12">
+                <label class="form-label" for="user_pass">Password</label>
+                <input type="password" class="form-control" name="user_pass" id="user_pass" value="{{ request.form['user_pass'] }}">
+              </div>
+            </div>
+
+            <br><br>
+            <div class="col d-flex justify-content-center">
+            <input type="submit" class="btn btn-success w-50" value="Register" >
+          </div>
+          <div class="text-center" style="padding:5px;">
+          <a href="#">Forgot Password </a>
+          <a href="{{url_for('index')}}">| Login</a>
+        </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+</form>
+
+
+<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>

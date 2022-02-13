@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="author" content="Isna Nur Azis">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capstone Management System</title>
+
+  <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="static/linearicons/icons.css" />
+  <!-- plugins -->
+  <link href="static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <form class="form-signin" action="{{ url_for('index') }}" method="post">
+      <div class="panel"
+        style="background-color: rgba(62,88,113);border-radius: 5px;box-shadow: 0 1px 0px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);">
+        <div class="panel-body text-center">
+          <h1 class="atomic-mass"><span class="lnr lnr-diamond"></span> OJTMS</h1>
+          <small class="element-name">Login</small>
+          <div class="form-group form-animate-text" style="margin-top:40px !important;">
+            <input type="text" class="form-text" name="user_name" placeholder="Username" value="{{ request.form['user_name']}}">
+            <span class="bar"></span>
+            <label>Username</label>
+          </div>
+          <div class="form-group form-animate-text" style="margin-top:40px !important;">
+            <input type="password" class="form-text" name="user_pass" placeholder="Password" value="{{ request.form['user_pass'] }}">
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+          <input type="submit" class="btn col-md-12" value="Login">
+        </div>
+        <div class="text-center" style="padding:5px;">
+          <a href="{{url_for('home')}}">OJT Part</a>
+          <a href="{{url_for('register')}}">| Signup</a>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <!-- end: Content -->
+  <!-- start: Javascript -->
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/jquery.ui.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+
+  <script src="static/js/plugins/moment.min.js"></script>
+  <script src="static/js/plugins/icheck.min.js"></script>
+
+  <!-- custom -->
+  <script src="static/js/main.js"></script>
+
+</body>
+
+</html>

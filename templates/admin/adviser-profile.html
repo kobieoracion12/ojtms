@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="keyword" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capstone Management System</title>
+ 
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.min.css">
+
+      <!-- plugins -->
+      <link rel="stylesheet" type="text/css" href="../static/linearicons/icons.css"/>
+      <link rel="stylesheet" type="text/css" href="../static/css/plugins/simple-line-icons.css"/>
+	    <link href="../static/css/style.css" rel="stylesheet">
+	<!-- end: Css -->
+
+  </head>
+
+ <body id="mimin" class="dashboard">
+      <!-- start: Header -->
+        <nav class="navbar navbar-default header navbar-fixed-top" style="background-color: rgba(62,88,113);">
+          <div class="col-md-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+              <div class="opener-left-menu is-open" style="background-color: rgba(44,62,80);">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </div>
+                <a href="index.html" class="navbar-brand"> 
+                 <b>CPMS</b>
+                </a>
+
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="user-name"><span>Admin</span></li>
+                  <li class="dropdown avatar-dropdown">
+                   <img src="../static/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                   <ul class="dropdown-menu user-dropdown animated swing">
+                     <li><a href="#"><span class="lnr lnr-user"></span> My Profile</a></li>
+                     <li><a href="#"><span class="lnr lnr-cog"></span> Settings</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li><a href="../index.html"><span class="lnr lnr-power-switch"></span> Logout</a></li>
+                  </ul>
+                </li>
+              </ul>    
+            </div>
+          </div>
+        </nav>
+      <!-- end: Header -->
+
+      <div class="container-fluid mimin-wrapper">
+  
+          <!-- start:Left Menu -->
+            <div id="left-menu">
+              <div class="sub-left-menu scroll" style="background-color: rgba(44,62,80);">
+                  <ul class="nav nav-list">
+                    <li class="time">
+                      <h1 class="animated fadeInLeft">21:00</h1>
+                      <p class="animated fadeInRight">Sat,June 1st 2021</p>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                         <span class="lnr lnr-home"></span>Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a href="profile.html">
+                         <span class="lnr lnr-user"></span>My Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="approve-project.html">
+                         <span class="lnr lnr-thumbs-up"></span>Approve Projects
+                      </a>
+                    </li>
+                    <li>
+                      <a href="adviser.html">
+                         <span class="lnr lnr-users"></span>Adviser
+                      </a>
+                    </li>
+                    <li>
+                      <a href="group.html">
+                         <span class="lnr lnr-users"></span>Group
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          <!-- end: Left Menu -->
+
+  		
+          <!-- start: content -->
+            <div id="content">
+
+                <div class="col-md-12" style="padding:20px;">
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                <div class="col-md-12 padding-0">
+                  <div class="panel box-shadow-none content-header">
+                      <div class="panel-body">
+                        <div class="col-md-12">
+                            <h3 class="animated fadeInLeft"><span class="lnr lnr-users"></span> Advisers Profile</h3>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-12">
+                                    <div class="panel box-v1 animated tada">
+                                      <div class="panel-body text-center">
+                                        <div class="tab-pane" id="about">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="../static/img/avatar.jpg" width="150" style="border-radius: 20px;"><br>
+                                                        <input type="file">
+                                                    </div>
+                                                    <h6>Choose Picture</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+
+                                            <div class="row">
+                                            <div class="header text-left">
+                                                    <h4>Profile Information</h4>
+                                                </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>First Name</label>
+                                                    <input type="text" class="form-control" placeholder="John...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" class="form-control" placeholder="Smith...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Last Name</label>
+                                                    <input type="text" class="form-control" placeholder="Doe...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Contact</label>
+                                                    <input type="text" class="form-control" placeholder="09876543212">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="text" class="form-control" placeholder="doe@gmail.com">
+                                                </div>
+                                            </div>
+                                            <div class="header text-left">
+                                                    <h4>Account</h4>
+                                                </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Username</label>
+                                                    <input type="text" class="form-control" placeholder="username">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="text" class="form-control" placeholder="********">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <button class="btn btn-md bg-info">Save Changes</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      		  </div>
+          <!-- end: content -->
+            </div>  
+          <!-- end: right menu -->
+          
+      </div>
+
+      <!-- start: Mobile -->
+      <div id="mimin-mobile" class="reverse">
+        <div class="mimin-mobile-menu-list">
+            <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+                <ul class="nav nav-list">
+                    <li class="time">
+                      <h1 class="animated fadeInLeft">21:00</h1>
+                      <p class="animated fadeInRight">Sat,June 1st 2021</p>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                         <span class="lnr lnr-home"></span>Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a href="profile.html">
+                         <span class="lnr lnr-user"></span>My Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="adviser.html">
+                         <span class="lnr lnr-users"></span>Adviser
+                      </a>
+                    </li>
+                    <li>
+                      <a href="group.html">
+                         <span class="lnr lnr-users"></span>Group
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>       
+      </div>
+      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+        <span class="fa fa-bars"></span>
+      </button>
+       <!-- end: Mobile -->
+
+    <!-- start: Javascript -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.ui.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    
+    <!-- plugins -->
+    <script src="../static/js/plugins/moment.min.js"></script>
+    <script src="../static/js/plugins/jquery.nicescroll.js"></script>
+
+
+     <script src="../static/js/main.js"></script>
+     
+  </body>
+</html>

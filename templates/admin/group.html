@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="keyword" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Capstone Management System</title>
+ 
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/animate.min.css">
+
+      <!-- plugins -->
+      <link rel="stylesheet" type="text/css" href="../static/linearicons/icons.css"/>
+  <link rel="stylesheet" type="text/css" href="../static/css/plugins/datatables.bootstrap.min.css"/>
+      <link rel="stylesheet" type="text/css" href="../static/css/plugins/simple-line-icons.css"/>
+	    <link href="../static/css/style.css" rel="stylesheet">
+	<!-- end: Css -->
+  </head>
+
+ <body id="mimin" class="dashboard">
+      <!-- start: Header -->
+        <nav class="navbar navbar-default header navbar-fixed-top" style="background-color: rgba(62,88,113);">
+          <div class="col-md-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+              <div class="opener-left-menu is-open" style="background-color: rgba(44,62,80);">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </div>
+                <a href="index.html" class="navbar-brand"> 
+                 <b>CPMS</b>
+                </a>
+
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="user-name"><span>Admin</span></li>
+                  <li class="dropdown avatar-dropdown">
+                   <img src="../static/img/avatar.jpg" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
+                   <ul class="dropdown-menu user-dropdown animated swing">
+                     <li><a href="#"><span class="lnr lnr-user"></span> My Profile</a></li>
+                     <li><a href="#"><span class="lnr lnr-cog"></span> Settings</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li><a href="../index.html"><span class="lnr lnr-power-switch"></span> Logout</a></li>
+                  </ul>
+                </li>
+              </ul>    
+            </div>
+          </div>
+        </nav>
+      <!-- end: Header -->
+
+      <div class="container-fluid mimin-wrapper">
+  
+          <!-- start:Left Menu -->
+            <div id="left-menu">
+              <div class="sub-left-menu scroll" style="background-color: rgba(44,62,80);">
+                  <ul class="nav nav-list">
+                    <li class="time">
+                      <h1 class="animated fadeInLeft">21:00</h1>
+                      <p class="animated fadeInRight">Sat,June 1st 2021</p>
+                    </li>
+                    <li>
+                      <a href="index.html">
+                         <span class="lnr lnr-home"></span>Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a href="profile.html">
+                         <span class="lnr lnr-user"></span>My Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="approve-project.html">
+                         <span class="lnr lnr-thumbs-up"></span>Approve Projects
+                      </a>
+                    </li>
+                    <li>
+                      <a href="adviser.html">
+                         <span class="lnr lnr-users"></span>Adviser
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="group.html">
+                         <span class="lnr lnr-users"></span>Group
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          <!-- end: Left Menu -->
+
+  		
+          <!-- start: content -->
+            <div id="content">
+
+                <div class="col-md-12" style="padding:20px;">
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                <div class="col-md-12 padding-0">
+                  <div class="panel box-shadow-none content-header">
+                      <div class="panel-body">
+                        <div class="col-md-10">
+                            <h3 class="animated fadeInLeft"><span class="lnr lnr-users"></span> Groups List</h3>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="btn btn-md btn-info text-right" href="#" data-toggle="modal" data-target="#add"><i class="lnr lnr-file-add"></i> Add New</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-12">
+                                    <div class="panel box-v1 animated pulse">
+                                      <div class="panel-body text-center">
+                                        <table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th>Group Code</th>
+                          <th>Authors</th>
+                          <th>Capstone Title</th>
+                          <th>Abstract</th>
+                          <th>School year</th>
+                          <th>Adviser</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>GRP-123</td>
+                          <td>Jane Doe</td>
+                          <td>Capstone Project</td>
+                          <td>Abstract</td>
+                          <td>2021-2022</td>
+                          <td>John Doe</td>
+                                        <td class="text-right">
+                                            <a class="btn btn-sm btn-success" href="#"><i
+                                                            class="lnr lnr-pencil"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-danger" href="#" data-toggle="modal"
+                                                        data-target="#delete"><i
+                                                            class="lnr lnr-trash"></i> Delete</a>
+                                        </td>
+                        </tr>
+                      </tbody>
+                        </table>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      		  </div>
+          <!-- end: content -->
+            </div>  
+          <!-- end: right menu -->
+          
+      </div>
+
+      <!-- start: Mobile -->
+      <div id="mimin-mobile" class="reverse">
+        <div class="mimin-mobile-menu-list">
+            <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+                <ul class="nav nav-list">
+                    <li><div class="left-bg"></div></li>
+                    <li class="time">
+                      <h1 class="animated fadeInLeft">21:00</h1>
+                      <p class="animated fadeInRight">Sat,June 1st 2021</p>
+                    </li>
+                    <li class="active ripple">
+                      <a href="index.html">
+                         <span class="lnr lnr-home"></span>Dashboard
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="profile.html">
+                         <span class="lnr lnr-user"></span>My Profile
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="adviser.html">
+                         <span class="lnr lnr-users"></span>Adviser
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="group.html">
+                         <span class="lnr lnr-users"></span>Group
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>       
+      </div>
+      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+        <span class="lnr lnr-menu"></span>
+      </button>
+       <!-- end: Mobile -->
+            <div id="delete" class="modal animated rubberBand delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <img src="../static/img/sent.png" alt="" width="50" height="46">
+                            <h3>Are you sure want to delete this Group?</h3>
+                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="add" class="modal animated rubberBand delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <div class="row">
+                                
+                                            <div class="col-sm-12">
+
+                                            <div class="header">
+                                                    <span class="lnr lnr-users" style="font-size: 30px"> Group Information</span>
+                                                </div><br>
+                                            <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Group Code</label>
+                                                    <input type="text" class="form-control" placeholder="code...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Group Member / Authors</label>
+                                                    <input type="text" class="form-control" placeholder="authors...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Capstone Title</label>
+                                                    <input type="text" class="form-control" placeholder="title...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Abstract</label>
+                                                    <input type="text" class="form-control" placeholder="abstract...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>School Year</label>
+                                                    <input type="text" class="form-control" placeholder="school year...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Adviser</label>
+                                                    <input type="text" class="form-control" placeholder="adviser">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <button class="btn btn-md bg-info">Save</button>
+                                                    <button class="btn btn-md bg-danger">Cancel</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- start: Javascript -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery.ui.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+
+
+
+<!-- plugins -->
+<script src="../static/js/plugins/moment.min.js"></script>
+<script src="../static/js/plugins/jquery.datatables.min.js"></script>
+<script src="../static/js/plugins/datatables.bootstrap.min.js"></script>
+<script src="../static/js/plugins/jquery.nicescroll.js"></script>
+
+
+<!-- custom -->
+<script src="../static/js/main.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#datatables-example').DataTable();
+  });
+</script>
+  </body>
+</html>
